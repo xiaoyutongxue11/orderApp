@@ -2,7 +2,7 @@
   display: flex;
   padding: 14rem;
   padding-left: 0;
-  border-bottom: .4px #cacaca solid;
+  border-bottom: 0.4px #cacaca solid;
   margin-bottom: 8rem;
 }
 .ImgBox {
@@ -24,10 +24,11 @@ p {
   color: dimgray;
   padding-right: 8rem;
 }
-.PriceWrap{
+.PriceWrap {
   display: flex;
   margin-top: 14rem;
   justify-content: space-between;
+  align-items: center;
 }
 .Price {
   font-size: 17rem;
