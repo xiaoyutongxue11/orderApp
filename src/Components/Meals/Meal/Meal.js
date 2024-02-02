@@ -13,7 +13,7 @@ const Meal = () => {
         <p>电视剧的客户给发的啥金康光哈干哈金康光好的很发达数据库</p>
         <div className={classes.PriceWrap}>
           <span className={classes.Price}>23</span>
-          <Counter amount={1} />
+          <Counter amount={3} />
         </div>
       </div>
     </div>
