@@ -10,9 +10,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 img {
-  width: 100%;
+  width: 85%;
+  height: 100rem;
+}
+.Content {
+  width: 225rem;
+  display: flex;
+  flex-direction: column;
+}
+.Text {
+  height: 60rem;
+  overflow: hidden;
 }
 .Title {
   font-weight: normal;
@@ -25,10 +36,12 @@ p {
   padding-right: 8rem;
 }
 .PriceWrap {
+  flex: auto;
   display: flex;
-  margin-top: 14rem;
+  margin-top: 12rem;
   justify-content: space-between;
   align-items: center;
+  padding-right: 6rem;
 }
 .Price {
   font-size: 17rem;

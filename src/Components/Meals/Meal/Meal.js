@@ -2,17 +2,19 @@
 import React from "react";
 import classes from "./Meal.module.css";
 import Counter from "../../../UI/Counter/Counter";
-const Meal = () => {
+const Meal = (props) => {
   return (
     <div className={classes.Meal}>
       <div className={classes.ImgBox}>
-        <img alt="" src="/img/meals/1.jpg"></img>
+        <img alt="" src={props.meal.img}></img>
       </div>
-      <div>
-        <h2 className={classes.Title}>汉堡包</h2>
-        <p>电视剧的客户给发的啥金康光哈干哈金康光好的很发达数据库</p>
+      <div className={classes.Content}>
+        <div className={classes.Text}>
+          <h2 className={classes.Title}>{props.meal.title}</h2>
+          <p>{props.meal.desc}</p>
+        </div>
         <div className={classes.PriceWrap}>
-          <span className={classes.Price}>23</span>
+          <span className={classes.Price}>{props.meal.price}</span>
           <Counter amount={3} />
         </div>
       </div>
