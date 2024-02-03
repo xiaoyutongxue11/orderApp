@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Counter.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import ShopCarContext from "../../store/shopCarContext";
 const Counter = (props) => {
+  const shopCarCtx = useContext(ShopCarContext);
   const addMealHandler = () => {
-    props.onAddMeal(props.meal);
+    shopCarCtx.addMealHandler(props.meal);
   };
   const subMealHandler = () => {
-    props.onSubMeal(props.meal);
+    shopCarCtx.subMealHandler(props.meal);
   };
   return (
     <div className={classes.Counter}>

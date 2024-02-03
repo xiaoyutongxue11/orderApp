@@ -1,7 +1,8 @@
 import { useState } from "react";
 import classes from "./App.module.css";
 import Meals from "./Components/Meals/Meals";
-import data from "./Data";
+import data from "./data";
+import ShopCarContext from "./store/shopCarContext.js";
 function App() {
   const [mealsData, setMealsData] = useState(data);
   const [foodsData, setFoodsData] = useState({
@@ -20,7 +21,6 @@ function App() {
     newFoodsData.totalAmount += 1;
     newFoodsData.totalPrice += meal.price;
     setFoodsData(newFoodsData);
-    console.log(mealsData);
   };
   const subMealHandler = (meal) => {
     const newFoodsData = { ...foodsData };
@@ -33,9 +33,13 @@ function App() {
     setFoodsData(newFoodsData);
   };
   return (
-    <div className={classes.App}>
-      <Meals mealsData={mealsData} onAddMeal={addMealHandler} onSubMeal={subMealHandler}/>
-    </div>
+    <ShopCarContext.Provider
+      value={{ ...foodsData, addMealHandler, subMealHandler }}
+    >
+      <div className={classes.App}>
+        <Meals mealsData={mealsData} />
+      </div>
+    </ShopCarContext.Provider>
   );
 }
 
