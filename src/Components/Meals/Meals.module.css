@@ -1,6 +1,7 @@
 .Meals{
-    position: absolute;
-    top: 0;
+    width: 375rem;
+    position: fixed;
+    top: 60rem;
     bottom: 0;
     overflow: auto;
 }

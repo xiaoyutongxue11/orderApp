@@ -1,0 +1,33 @@
+.FilterMeals {
+  width: 375rem;
+  height: 60rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+  border-bottom: 0.4px #cacaca solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SearchOuter {
+  position: relative;
+  display: flex;
+    align-items: center;
+}
+.SearchInput {
+  width: 340rem;
+  height: 35rem;
+  border: none;
+  border-radius: 14px;
+  background-color: #e0e0e0;
+  padding-left: 30rem;
+  outline: none;
+  font-size: 14rem;
+}
+.SearchIcon {
+  color: rgb(100, 99, 99);
+  position: absolute;
+  left: 10rem;
+}

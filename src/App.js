@@ -3,6 +3,7 @@ import classes from "./App.module.css";
 import Meals from "./Components/Meals/Meals";
 import data from "./data";
 import ShopCarContext from "./store/shopCarContext.js";
+import FilterMeals from "./Components/FilterMeals/FilterMeals.js";
 function App() {
   const [mealsData, setMealsData] = useState(data);
   const [foodsData, setFoodsData] = useState({
@@ -37,6 +38,7 @@ function App() {
       value={{ ...foodsData, addMealHandler, subMealHandler }}
     >
       <div className={classes.App}>
+        <FilterMeals />
         <Meals mealsData={mealsData} />
       </div>
     </ShopCarContext.Provider>
