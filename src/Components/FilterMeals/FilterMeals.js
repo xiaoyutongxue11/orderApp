@@ -4,7 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import classes from "./FilterMeals.module.css";
 const FilterMeals = (props) => {
   const inputKeyWord = (e) => {
-    props.onFilter(e.target.value);
+    props.onFilter(e.target.value.trim());
   };
   return (
     <div className={classes.FilterMeals}>

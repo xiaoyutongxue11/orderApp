@@ -2,6 +2,6 @@
     width: 375rem;
     position: fixed;
     top: 60rem;
-    bottom: 0;
+    bottom: 60rem;
     overflow: auto;
 }
