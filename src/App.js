@@ -5,7 +5,6 @@ import data from "./data";
 import ShopCarContext from "./store/shopCarContext.js";
 import FilterMeals from "./Components/FilterMeals/FilterMeals.js";
 import ShoppingCar from "./Components/ShoppingCar/ShoppingCar.js";
-import Backdrop from "./UI/Backdrop/Backdrop.js";
 function App() {
   const [mealsData, setMealsData] = useState(data);
   const [foodsData, setFoodsData] = useState({
@@ -49,7 +48,6 @@ function App() {
         <FilterMeals onFilter={filterMeals} />
         <Meals mealsData={mealsData} />
         <ShoppingCar />
-        <Backdrop />
       </div>
     </ShopCarContext.Provider>
   );

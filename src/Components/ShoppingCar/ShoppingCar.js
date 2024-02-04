@@ -4,16 +4,34 @@ import ShoppingBag from "../../assets/ShoppingBag.jpg";
 import ShopCarContext from "../../store/shopCarContext";
 const ShoppingCar = () => {
   const shoppingCarCtx = useContext(ShopCarContext);
+  let isEmpty = shoppingCarCtx.totalAmount;
   return (
-    <div className={classes.ShoppingCar}>
+    <div
+      className={`${classes.ShoppingCar} ${
+        isEmpty === 0 ? classes.DarkBack : ""
+      }`}
+    >
       <div className={classes.Icon}>
         <img alt="购物袋" src={ShoppingBag} />
-        <span className={classes.totalAmount}>
-          {shoppingCarCtx.totalAmount}
-        </span>
+        {isEmpty === 0 ? null : (
+          <span className={classes.totalAmount}>
+            {shoppingCarCtx.totalAmount}
+          </span>
+        )}
       </div>
-      <p className={classes.Price}>{shoppingCarCtx.totalPrice}</p>
-      <button className={classes.Button}>去结算</button>
+      {isEmpty === 0 ? (
+        <>
+          <p className={classes.NoFood}>未选中商品</p>
+          <button className={`${classes.Button} ${classes.DarkButton}`}>
+            去结算
+          </button>
+        </>
+      ) : (
+        <>
+          <p className={classes.Price}>{shoppingCarCtx.totalPrice}</p>
+          <button className={classes.Button}>去结算</button>
+        </>
+      )}
     </div>
   );
 };
