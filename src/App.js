@@ -33,12 +33,18 @@ function App() {
     newFoodsData.totalPrice -= meal.price;
     setFoodsData(newFoodsData);
   };
+  const filterMeals = (keyWord) => {
+    const filterData = data.filter(
+      (item) => item.title.indexOf(keyWord) !== -1
+    );
+    setMealsData(filterData);
+  };
   return (
     <ShopCarContext.Provider
       value={{ ...foodsData, addMealHandler, subMealHandler }}
     >
       <div className={classes.App}>
-        <FilterMeals />
+        <FilterMeals onFilter={filterMeals} />
         <Meals mealsData={mealsData} />
       </div>
     </ShopCarContext.Provider>

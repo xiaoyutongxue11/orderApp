@@ -14,7 +14,7 @@
 .SearchOuter {
   position: relative;
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 .SearchInput {
   width: 340rem;
