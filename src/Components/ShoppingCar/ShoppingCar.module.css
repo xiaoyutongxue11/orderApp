@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 .Icon {
   width: 30rem;
@@ -43,7 +44,7 @@
 .Price::before {
   content: "¥";
   font-weight: bold;
-  font-size: 14rem;
+  font-size: 13rem;
   margin: 1rem;
 }
 .Button {
