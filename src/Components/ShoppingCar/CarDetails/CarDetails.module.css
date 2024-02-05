@@ -1,0 +1,31 @@
+.CarDetails {
+  background-color: white;
+  width: 375rem;
+  height: 600rem;
+  position: absolute;
+  bottom: 0;
+  border-radius: 20rem 20rem 0 0;
+  display: flex;
+  flex-flow: column;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12rem;
+  padding: 20rem;
+  align-items: center;
+}
+.Title {
+  margin: 0;
+}
+.Clear {
+  color: rgb(117, 117, 117);
+}
+.Clear span {
+  margin-left: 6rem;
+}
+.FoodList {
+  flex: auto;
+  margin-bottom: 60rem;
+  overflow: auto;
+}

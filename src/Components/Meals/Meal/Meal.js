@@ -11,11 +11,11 @@ const Meal = (props) => {
       <div className={classes.Content}>
         <div className={classes.Text}>
           <h2 className={classes.Title}>{props.meal.title}</h2>
-          <p>{props.meal.desc}</p>
+          {props.noDesc ? null : <p>{props.meal.desc}</p>}
         </div>
         <div className={classes.PriceWrap}>
           <span className={classes.Price}>{props.meal.price}</span>
-          <Counter meal={props.meal} />
+          <Counter meal={props.meal} amount={props.meal.amount} />
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import classes from "./ShoppingCar.module.css";
 import ShoppingBag from "../../assets/ShoppingBag.jpg";
 import ShopCarContext from "../../store/shopCarContext";
+import CarDetails from "./CarDetails/CarDetails";
 const ShoppingCar = () => {
   const shoppingCarCtx = useContext(ShopCarContext);
   let isEmpty = shoppingCarCtx.totalAmount;
@@ -11,6 +12,7 @@ const ShoppingCar = () => {
         isEmpty === 0 ? classes.DarkBack : ""
       }`}
     >
+      <CarDetails />
       <div className={classes.Icon}>
         <img alt="购物袋" src={ShoppingBag} />
         {isEmpty === 0 ? null : (
