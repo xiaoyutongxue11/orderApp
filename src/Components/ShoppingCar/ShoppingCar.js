@@ -18,7 +18,7 @@ const ShoppingCar = () => {
       }`}
       onClick={checkCarDetails}
     >
-      {showDetails && <CarDetails />}
+      {showDetails && <CarDetails onClear={checkCarDetails} />}
       <div className={classes.Icon}>
         <img alt="购物袋" src={ShoppingBag} />
         {isEmpty === 0 ? null : (

@@ -6,7 +6,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import ShopCarContext from "../../../store/shopCarContext";
 import Meal from "../../Meals/Meal/Meal";
 import Confirm from "../../../UI/Confirm/Confirm";
-const CarDetails = () => {
+const CarDetails = (props) => {
   const ShopCarCtx = useContext(ShopCarContext);
   const stopBubble = (e) => {
     e.stopPropagation();
@@ -21,6 +21,8 @@ const CarDetails = () => {
   };
   const okClearHandler = () => {
     ShopCarCtx.clearMealHandler();
+    setShowConfirm(false);
+    props.onClear();
   };
   return (
     <Backdrop>
