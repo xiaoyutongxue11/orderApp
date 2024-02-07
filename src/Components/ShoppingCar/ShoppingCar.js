@@ -3,13 +3,22 @@ import classes from "./ShoppingCar.module.css";
 import ShoppingBag from "../../assets/ShoppingBag.jpg";
 import ShopCarContext from "../../store/shopCarContext";
 import CarDetails from "./CarDetails/CarDetails";
+import Payment from "./Payment/Payment";
 const ShoppingCar = () => {
   const shoppingCarCtx = useContext(ShopCarContext);
   let isEmpty = shoppingCarCtx.totalAmount;
-  const [showDetails, setDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const [showPayment, setShowPayment] = useState(false);
   const checkCarDetails = () => {
     if (shoppingCarCtx.totalAmount === 0) return;
-    setDetails((preState) => !preState);
+    setShowDetails((preState) => !preState);
+  };
+  const checkPayment = (e) => {
+    e.stopPropagation();
+    setShowPayment(true);
+  };
+  const closePayment = () => {
+    setShowPayment(false);
   };
   return (
     <div
@@ -18,7 +27,10 @@ const ShoppingCar = () => {
       }`}
       onClick={checkCarDetails}
     >
-      {showDetails && <CarDetails onClear={checkCarDetails} />}
+      {showPayment && <Payment onClose={closePayment} />}
+      {showDetails && isEmpty !== 0 ? (
+        <CarDetails onClear={checkCarDetails} />
+      ) : null}
       <div className={classes.Icon}>
         <img alt="购物袋" src={ShoppingBag} />
         {isEmpty === 0 ? null : (
@@ -37,7 +49,9 @@ const ShoppingCar = () => {
       ) : (
         <>
           <p className={classes.Price}>{shoppingCarCtx.totalPrice}</p>
-          <button className={classes.Button}>去结算</button>
+          <button className={classes.Button} onClick={checkPayment}>
+            去结算
+          </button>
         </>
       )}
     </div>
