@@ -15,8 +15,17 @@
   border-radius: 14rem;
 }
 .Header {
+  height: 30rem;
+  line-height: 30rem;
   font-weight: bold;
   border-bottom: 0.4px #cacaca solid;
+}
+.PayList {
+  max-height: 600rem;
+  overflow: auto;
+}
+.PayList::-webkit-scrollbar {
+  width: 0;
 }
 .Footer {
   height: 50rem;
@@ -28,19 +37,19 @@
 }
 .Footer::before,
 .Footer::after {
-    content: "";
-    position: absolute;
-    width: 10rem;
-    height: 10rem;
-    background-color: #eee;
-    border-radius: 50%;
-    top: -5rem;
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background-color: #eee;
+  border-radius: 50%;
+  top: -5rem;
 }
-.Footer::before{
-    left: -15rem;
+.Footer::before {
+  left: -15rem;
 }
-.Footer::after{
-    right: -15rem;
+.Footer::after {
+  right: -15rem;
 }
 .TotalPrice {
   font-size: 16rem;

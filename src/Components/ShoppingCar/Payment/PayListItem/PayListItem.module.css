@@ -1,0 +1,32 @@
+.PayListItem {
+  display: flex;
+  padding: 10rem 0;
+  border-bottom: .4px #cacaca solid;
+}
+.ImgBox {
+  width: 100rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ImgBox img {
+  width: 90%;
+  height: 85rem;
+}
+.Desc{
+    flex: auto;
+    justify-content: space-evenly;
+}
+.PriceWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Price{
+    font-weight: bold;
+}
+.Price::before{
+    content: "¥";
+    font-size: 12rem;
+    font-weight: normal;
+}
