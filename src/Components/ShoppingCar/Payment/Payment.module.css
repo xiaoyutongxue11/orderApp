@@ -1,11 +1,54 @@
-.Payment {
+.PaymentOuter {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1200;
-  font-size: 16rem;
+  font-size: 14rem;
   background-color: #eee;
   padding: 8rem;
+}
+.Payment {
+  padding: 10rem;
+  background-color: white;
+  border-radius: 14rem;
+}
+.Header {
+  font-weight: bold;
+  border-bottom: 0.4px #cacaca solid;
+}
+.Footer {
+  height: 50rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-top: 0.4px #cacaca dashed;
+  position: relative;
+}
+.Footer::before,
+.Footer::after {
+    content: "";
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    background-color: #eee;
+    border-radius: 50%;
+    top: -5rem;
+}
+.Footer::before{
+    left: -15rem;
+}
+.Footer::after{
+    right: -15rem;
+}
+.TotalPrice {
+  font-size: 16rem;
+  font-weight: bold;
+}
+.TotalPrice::before {
+  font-size: 12rem;
+  content: "合计¥";
+  font-weight: normal;
+  margin-right: 6rem;
 }
