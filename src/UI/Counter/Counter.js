@@ -5,10 +5,12 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import ShopCarContext from "../../store/shopCarContext";
 const Counter = (props) => {
   const shopCarCtx = useContext(ShopCarContext);
-  const addMealHandler = () => {
+  const addMealHandler = (e) => {
+    e.stopPropagation();
     shopCarCtx.addMealHandler(props.meal);
   };
-  const subMealHandler = () => {
+  const subMealHandler = (e) => {
+    e.stopPropagation();
     shopCarCtx.subMealHandler(props.meal);
   };
   return (

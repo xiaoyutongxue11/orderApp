@@ -34,6 +34,7 @@ p {
   margin: 0;
   color: dimgray;
   padding-right: 8rem;
+  font-size: 14rem;
 }
 .PriceWrap {
   flex: auto;

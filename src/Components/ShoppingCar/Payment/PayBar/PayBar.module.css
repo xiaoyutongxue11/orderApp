@@ -1,0 +1,32 @@
+.PayBar {
+  width: 350rem;
+  height: 42rem;
+  background-color: rgb(31, 31, 31);
+  border-radius: 30rem;
+  position: absolute;
+  bottom: 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TotalPrice {
+  color: white;
+  margin-left: 20rem;
+  font-weight: bold;
+  font-size: 18rem;
+}
+.TotalPrice::before {
+  content: "合计¥";
+  font-weight: bold;
+  font-size: 13rem;
+  margin-right: 5rem;
+}
+.Button {
+  width: 120rem;
+  height: 44rem;
+  background-color: rgb(249, 167, 15);
+  border: none;
+  border-radius: 30rem;
+  font-weight: bold;
+  font-size: 18rem;
+}

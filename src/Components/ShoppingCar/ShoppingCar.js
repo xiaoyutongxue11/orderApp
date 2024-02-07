@@ -27,7 +27,7 @@ const ShoppingCar = () => {
       }`}
       onClick={checkCarDetails}
     >
-      {showPayment && <Payment onClose={closePayment} />}
+      {showPayment && isEmpty !== 0 ? <Payment onClose={closePayment} /> : null}
       {showDetails && isEmpty !== 0 ? (
         <CarDetails onClear={checkCarDetails} />
       ) : null}
