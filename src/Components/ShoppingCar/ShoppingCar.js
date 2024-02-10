@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classes from "./ShoppingCar.module.css";
 import ShoppingBag from "../../assets/ShoppingBag.jpg";
 import ShopCarContext from "../../store/shopCarContext";
@@ -20,6 +20,12 @@ const ShoppingCar = () => {
   const closePayment = () => {
     setShowPayment(false);
   };
+  useEffect(() => {
+    if (isEmpty === 0) {
+      setShowPayment(false);
+      setShowDetails(false);
+    }
+  }, [isEmpty]);
   return (
     <div
       className={`${classes.ShoppingCar} ${
@@ -27,7 +33,7 @@ const ShoppingCar = () => {
       }`}
       onClick={checkCarDetails}
     >
-      {showPayment && isEmpty !== 0 ? <Payment onClose={closePayment} /> : null}
+      {showPayment && <Payment onClose={closePayment} />}
       {showDetails && isEmpty !== 0 ? (
         <CarDetails onClear={checkCarDetails} />
       ) : null}
