@@ -20,7 +20,7 @@ const CarDetails = (props) => {
     setShowConfirm(false);
   };
   const okClearHandler = () => {
-    ShopCarCtx.clearMealHandler();
+    ShopCarCtx.carDataDispatch({ type: "CLEAR" });
     setShowConfirm(false);
     props.onClear();
   };

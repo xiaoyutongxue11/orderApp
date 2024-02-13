@@ -3,8 +3,6 @@ const ShopCarContext = React.createContext({
   foods: [],
   totalAmount: 0,
   totalPrice: 0,
-  addMealHandler: () => {},
-  subMealHandler: () => {},
-  clearMealHandler: () => {},
+  carDispatch: () => {},
 });
 export default ShopCarContext;

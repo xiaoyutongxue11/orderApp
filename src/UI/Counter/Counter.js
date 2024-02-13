@@ -7,11 +7,11 @@ const Counter = (props) => {
   const shopCarCtx = useContext(ShopCarContext);
   const addMealHandler = (e) => {
     e.stopPropagation();
-    shopCarCtx.addMealHandler(props.meal);
+    shopCarCtx.carDataDispatch({ type: "ADD", meal: props.meal });
   };
   const subMealHandler = (e) => {
     e.stopPropagation();
-    shopCarCtx.subMealHandler(props.meal);
+    shopCarCtx.carDataDispatch({ type: "SUB", meal: props.meal });
   };
   return (
     <div className={classes.Counter}>
